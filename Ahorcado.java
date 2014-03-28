@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -46,10 +45,10 @@ public static void main(String[] args){
 			System.out.println("Introduzca una Letra: ");
 			try{
 				InputStreamReader lector2 = new InputStreamReader(System.in);
-	      		BufferedReader in1 = new BufferedReader(lector2);
+	      			BufferedReader in1 = new BufferedReader(lector2);
 				String letraIntroducidaString = in1.readLine();
 
-	    	//*Busca la letra en la palabra
+	    		//*Busca la letra en la palabra
 			char letraIntroducidaChar = letraIntroducidaString.charAt(0);	//Convierte en char el string
 			for(int i = 0; i < tamanoPalabra; i++){	
 				
@@ -64,11 +63,11 @@ public static void main(String[] args){
 			}
 
 			//*Cuenta los errores cuando no encuentra la letra
-				int buscarErrores = 0;
-				buscarErrores = palabraOriginal.indexOf(letraIntroducidaString); //Nos dará el index de la letra 																			 //en el array palabra
-				if(buscarErrores == -1){	//Si no encuentra la letra introducida en el texto
-					errores++;				//entonces suma un error
-				}
+			int buscarErrores = 0;
+			buscarErrores = palabraOriginal.indexOf(letraIntroducidaString); //Nos dará el index de la letra 																			 //en el array palabra
+			if(buscarErrores == -1){	//Si no encuentra la letra introducida en el texto
+				errores++;				//entonces suma un error
+			}
 
 			//*Compara la palabra buscada con la palabra que se tiene hasta el momento
 			String nuevaPalabraString = new String(nuevaPalabra); // Se convierte en String el array nuevaPalabra
@@ -81,8 +80,8 @@ public static void main(String[] args){
 			System.out.println("Errores: "+errores);	//Muestra los errores que llevas
 
 			}catch (StringIndexOutOfBoundsException e){
-	     		 System.out.println("Error al leer al usuario. Intentalo otra vez!\n\n\n\n");
-	    	}
+	     		 	System.out.println("Error al leer al usuario. Intentalo otra vez!\n\n\n\n");
+	    		}
 
 	    } 
 
@@ -90,22 +89,22 @@ public static void main(String[] args){
 	    if(errores == 4){
 	    	System.out.println("\n***************** Lo siento, has perdido el juego >:D *******************\n");
 	    	System.out.println("(Presione Enter para salir.)");
-				try {
-				System.in.read();
-				} catch (IOException e) {
-				return;
-				}
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			return;
+		}
 	    }
 
 	    //*Si terminaste de encontrar toda la palabra imprime que ganaste
 	    if(comparacionPalabras == true){
 	    	System.out.println("\n***************** GANASTE :D!!!! *******************\n");
 	    	System.out.println("(Presione Enter para salir.)");
-				try {
-				System.in.read();
-				} catch (IOException e) {
-				return;
-				}
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			return;
+		}
 	    }
 
 	}catch (IOException e){
